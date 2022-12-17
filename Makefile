@@ -12,3 +12,6 @@ lint: # запускает линтер
 
 brain-even: # запуск Проверки на чётность
 	node bin/brain-even.js
+
+brain-calc: # запуск Калькулятора
+	node bin/brain-calc.js
