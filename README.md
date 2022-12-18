@@ -6,3 +6,5 @@
 Brain-even, проверка на чётность: https://asciinema.org/a/546166
 
 Brain-calc, калькулятор: https://asciinema.org/a/546411
+
+Brain-gcd, НОД: https://asciinema.org/a/546490
