@@ -15,3 +15,9 @@ brain-even: # запуск Проверки на чётность
 
 brain-calc: # запуск Калькулятора
 	node bin/brain-calc.js
+
+brain-gcd: # запуск НОД
+	node bin/brain-gcd.js
+
+brain-progression: # запуск Арифметической прогресси
+	node bin/brain-progression.js

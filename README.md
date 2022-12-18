@@ -8,3 +8,5 @@ Brain-even, проверка на чётность: https://asciinema.org/a/5461
 Brain-calc, калькулятор: https://asciinema.org/a/546411
 
 Brain-gcd, НОД: https://asciinema.org/a/546490
+
+Brainprogression, арифметическая прогрессия: https://asciinema.org/a/546591
