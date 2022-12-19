@@ -9,4 +9,6 @@ Brain-calc, калькулятор: https://asciinema.org/a/546411
 
 Brain-gcd, НОД: https://asciinema.org/a/546490
 
-Brainprogression, арифметическая прогрессия: https://asciinema.org/a/546591
+Brain-progression, арифметическая прогрессия: https://asciinema.org/a/546591
+
+Brain-prime, простое ли число: https://asciinema.org/a/546598

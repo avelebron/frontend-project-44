@@ -21,3 +21,6 @@ brain-gcd: # запуск НОД
 
 brain-progression: # запуск Арифметической прогресси
 	node bin/brain-progression.js
+
+brain-prime: # запуск Простое ли число?
+	node bin/brain-prime.js
