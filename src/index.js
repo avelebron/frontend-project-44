@@ -2,15 +2,15 @@ import readlineSync from 'readline-sync';
 import { greetingBrainEven, startBrainEven } from './games/braineven.js';
 import { greetingBrainCalc, startBrainCalc } from './games/braincalc.js';
 import { greetingBrainGcd, startBrainGcd } from './games/braingcd.js';
+import { greetingBrainPrime, startBrainPrime } from './games/brainprime.js';
+import { greetingBrainProgression, startBrainProgression } from './games/brainprogression.js';
 
-const startGame = () => {
+export default function startGame(game) {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
 
-  const gameName = readlineSync.question('');
-
-  let result;
+  const gameName = game;
 
   switch (gameName) {
     case 'brain-even':
@@ -22,9 +22,17 @@ const startGame = () => {
     case 'brain-gcd':
       greetingBrainGcd();
       break;
+    case 'brain-prime':
+      greetingBrainPrime();
+      break;
+    case 'brain-progression':
+      greetingBrainProgression();
+      break;
     default:
       break;
   }
+
+  let result;
 
   for (let i = 0; i < 3; i += 1) {
     switch (gameName) {
@@ -37,6 +45,12 @@ const startGame = () => {
       case 'brain-gcd':
         result = startBrainGcd();
         break;
+      case 'brain-prime':
+        result = startBrainPrime();
+        break;
+      case 'brain-progression':
+        result = startBrainProgression();
+        break;
       default:
         break;
     }
@@ -46,6 +60,4 @@ const startGame = () => {
     }
   }
   console.log(`Congratulations, ${userName}!`);
-};
-
-startGame();
+}

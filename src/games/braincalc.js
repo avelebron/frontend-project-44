@@ -5,9 +5,6 @@ const getRandomNumber = () => Math.round(Math.random() * 10);
 const operators = ['+', '-', '*'];
 
 export const greetingBrainCalc = () => {
-  console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
   console.log('What is the result of the expression?');
 };
 
