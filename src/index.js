@@ -1,9 +1,26 @@
 import readlineSync from 'readline-sync';
-import { greetingBrainEven, startBrainEven } from './games/braineven.js';
-import { greetingBrainCalc, startBrainCalc } from './games/braincalc.js';
-import { greetingBrainGcd, startBrainGcd } from './games/braingcd.js';
-import { greetingBrainPrime, startBrainPrime } from './games/brainprime.js';
-import { greetingBrainProgression, startBrainProgression } from './games/brainprogression.js';
+import { greetingBrainEven, startBrainEven } from './games/brain-even.js';
+import { greetingBrainCalc, startBrainCalc } from './games/brain-calc.js';
+import { greetingBrainGcd, startBrainGcd } from './games/brain-gcd.js';
+import { greetingBrainPrime, startBrainPrime } from './games/brain-prime.js';
+import { greetingBrainProgression, startBrainProgression } from './games/brain-progression.js';
+
+export const getRandomNumber = () => Math.round(Math.random() * 100);
+export const askQuestion = (expression) => {
+  const question = expression;
+  console.log(`Question: ${question}`);
+};
+export const getAnswer = () => readlineSync.question('Your answer: ');
+export const test = (num1, num2) => {
+  const userAnswer = num1;
+  const correctAnswer = num2;
+  if (userAnswer === correctAnswer) {
+    console.log('Correct!');
+    return true;
+  }
+  console.log(`${userAnswer} is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+  return false;
+};
 
 export default function startGame(game) {
   console.log('Welcome to the Brain Games!');
@@ -29,7 +46,7 @@ export default function startGame(game) {
       greetingBrainProgression();
       break;
     default:
-      break;
+      throw new Error(`Unknown game: ${gameName}!`);
   }
 
   let result;
@@ -52,8 +69,9 @@ export default function startGame(game) {
         result = startBrainProgression();
         break;
       default:
-        break;
+        throw new Error(`Unknown game: ${gameName}!`);
     }
+
     if (!result) {
       console.log(`Let's try again, ${userName}!`);
       return;
