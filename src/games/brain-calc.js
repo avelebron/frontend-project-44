@@ -1,4 +1,9 @@
-import { getRandomNumber, askQuestion, test, getAnswer } from '../index.js';
+import {
+  getRandomNumber,
+  askQuestion,
+  test,
+  getAnswer,
+} from '../index.js';
 
 const getOperator = () => {
   const operators = ['+', '-', '*'];

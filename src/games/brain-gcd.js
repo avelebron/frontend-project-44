@@ -1,4 +1,9 @@
-import { getRandomNumber, askQuestion, test, getAnswer } from '../index.js';
+import {
+  getRandomNumber,
+  askQuestion,
+  test,
+  getAnswer,
+} from '../index.js';
 
 export const greetingBrainGcd = () => {
   console.log('Find the greatest common divisor of given numbers.');

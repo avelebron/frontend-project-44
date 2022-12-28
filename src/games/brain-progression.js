@@ -1,4 +1,9 @@
-import { getRandomNumber, askQuestion, test, getAnswer } from '../index.js';
+import {
+  getRandomNumber,
+  askQuestion,
+  test,
+  getAnswer,
+} from '../index.js';
 
 const getStep = () => {
   const steps = [1, 2, 3, 4, 5];
