@@ -1,6 +1,9 @@
 install: # копирование пакетов
 	npm ci
 
+link: # установка пакета
+	npm link
+
 brain-games: # запуск игры
 	node bin/brain-games.js
 
