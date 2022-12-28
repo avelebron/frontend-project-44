@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "Node.js boilerplate package",
+  "description": "set of console arithmetic games",
   "main": "index.js",
   "type": "module",
   "bin": {
