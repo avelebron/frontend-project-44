@@ -2,6 +2,7 @@ import readlineSync from 'readline-sync';
 
 const getName = () => readlineSync.question('Welcome to the Brain Games!\nMay I have your name? ');
 const userName = getName();
+
 export const getRandomNumber = () => Math.round(Math.random() * 100);
 export const askQuestion = (expression) => {
   const question = expression;
