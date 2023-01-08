@@ -1,15 +1,17 @@
 import {
+  greeting,
   getRandomNumber,
   askQuestion,
   test,
   getAnswer,
+  startGame,
 } from '../index.js';
 
-export const greetingBrainGcd = () => {
+const greetingBrainGcd = () => {
   console.log('Find the greatest common divisor of given numbers.');
 };
 
-export const startBrainGcd = () => {
+const startRound = () => {
   const number1 = getRandomNumber();
   const number2 = getRandomNumber();
   const expression = `${number1} ${number2}`;
@@ -25,4 +27,12 @@ export const startBrainGcd = () => {
   }
 
   return test(answer, gameAnswer);
+};
+
+export default () => {
+  greeting();
+
+  greetingBrainGcd();
+
+  startGame(startRound);
 };

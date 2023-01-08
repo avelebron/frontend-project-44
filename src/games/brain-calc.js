@@ -1,8 +1,10 @@
 import {
+  greeting,
   getRandomNumber,
   askQuestion,
   test,
   getAnswer,
+  startGame,
 } from '../index.js';
 
 const getOperator = () => {
@@ -11,11 +13,9 @@ const getOperator = () => {
   return operators[index % operators.length];
 };
 
-export const greetingBrainCalc = () => {
-  console.log('What is the result of the expression?');
-};
+const greetingBrainCalc = () => console.log('What is the result of the expression?');
 
-export const startBrainCalc = () => {
+const startRound = () => {
   const number1 = getRandomNumber();
   const number2 = getRandomNumber();
   const operator = getOperator();
@@ -42,4 +42,12 @@ export const startBrainCalc = () => {
   }
 
   return test(answer, gameAnswer);
+};
+
+export default () => {
+  greeting();
+
+  greetingBrainCalc();
+
+  startGame(startRound);
 };

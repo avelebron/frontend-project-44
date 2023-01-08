@@ -1,8 +1,10 @@
 import {
+  greeting,
   getRandomNumber,
   askQuestion,
   test,
   getAnswer,
+  startGame,
 } from '../index.js';
 
 const getStep = () => {
@@ -23,11 +25,11 @@ const getProgression = () => {
   return row;
 };
 
-export const greetingBrainProgression = () => {
+const greetingBrainProgression = () => {
   console.log('What number is missing in the progression?');
 };
 
-export const startBrainProgression = () => {
+const startRound = () => {
   const progression = getProgression();
   const indexRandom = getRandomNumber() % progression.length;
   const gameAnswer = progression[indexRandom];
@@ -37,4 +39,12 @@ export const startBrainProgression = () => {
   const answer = Number(getAnswer());
 
   return test(answer, gameAnswer);
+};
+
+export default () => {
+  greeting();
+
+  greetingBrainProgression();
+
+  startGame(startRound);
 };
