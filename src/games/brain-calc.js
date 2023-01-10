@@ -1,5 +1,4 @@
 import {
-  greeting,
   getRandomNumber,
   askQuestion,
   test,
@@ -13,7 +12,30 @@ const getOperator = () => {
   return operators[index % operators.length];
 };
 
-const greetingBrainCalc = () => console.log('What is the result of the expression?');
+const gameRules = () => console.log('What is the result of the expression?');
+
+const getGameAnswer = (number1, operator, number2) => {
+  let correctAnswer = 0;
+  const sum = number1 + number2;
+  const difference = number1 - number2;
+  const product = number1 * number2;
+
+  switch (operator) {
+    case '+':
+      correctAnswer = sum;
+      break;
+    case '-':
+      correctAnswer = difference;
+      break;
+    case '*':
+      correctAnswer = product;
+      break;
+    default:
+      throw new Error(`No operator: ${operator}!`);
+  }
+
+  return correctAnswer;
+};
 
 const startRound = () => {
   const number1 = getRandomNumber();
@@ -21,33 +43,12 @@ const startRound = () => {
   const operator = getOperator();
   const expression = `${number1} ${operator} ${number2}`;
   askQuestion(expression);
-  const answer = Number(getAnswer());
-  let gameAnswer = 0;
-  const sum = number1 + number2;
-  const difference = number1 - number2;
-  const product = number1 * number2;
+  const userAnswer = Number(getAnswer());
+  const correctAnswer = getGameAnswer(number1, operator, number2);
 
-  switch (operator) {
-    case '+':
-      gameAnswer = sum;
-      break;
-    case '-':
-      gameAnswer = difference;
-      break;
-    case '*':
-      gameAnswer = product;
-      break;
-    default:
-      throw new Error(`No operator: ${operator}!`);
-  }
-
-  return test(answer, gameAnswer);
+  return test(userAnswer, correctAnswer);
 };
 
 export default () => {
-  greeting();
-
-  greetingBrainCalc();
-
-  startGame(startRound);
+  startGame(gameRules, startRound);
 };

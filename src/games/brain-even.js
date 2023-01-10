@@ -1,5 +1,4 @@
 import {
-  greeting,
   getRandomNumber,
   askQuestion,
   test,
@@ -9,23 +8,19 @@ import {
 
 const isEven = (num) => num % 2 === 0;
 
-const greetingBrainEven = () => {
+const gameRules = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 };
 
 const startRound = () => {
   const number = getRandomNumber();
   askQuestion(number);
-  const answer = getAnswer();
-  const gameAnswer = isEven(number) ? 'yes' : 'no';
+  const userAnswer = getAnswer();
+  const correctAnswer = isEven(number) ? 'yes' : 'no';
 
-  return test(answer, gameAnswer);
+  return test(userAnswer, correctAnswer);
 };
 
 export default () => {
-  greeting();
-
-  greetingBrainEven();
-
-  startGame(startRound);
+  startGame(gameRules, startRound);
 };

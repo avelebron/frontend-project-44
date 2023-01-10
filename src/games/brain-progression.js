@@ -1,5 +1,4 @@
 import {
-  greeting,
   getRandomNumber,
   askQuestion,
   test,
@@ -13,11 +12,8 @@ const getStep = () => {
   return steps[index % steps.length];
 };
 
-const getProgression = () => {
-  const number1 = getRandomNumber();
+const getProgression = (number1, step, rowLength = 10) => {
   const row = [];
-  const step = getStep();
-  const rowLength = 10;
   for (let i = 0; i < rowLength; i += 1) {
     const number = number1 + i * step;
     row.push(number);
@@ -25,26 +21,26 @@ const getProgression = () => {
   return row;
 };
 
-const greetingBrainProgression = () => {
+const gameRules = () => {
   console.log('What number is missing in the progression?');
 };
 
 const startRound = () => {
-  const progression = getProgression();
+  const number1 = getRandomNumber();
+  const step = getStep();
+  const progression = getProgression(number1, step);
+  
   const indexRandom = getRandomNumber() % progression.length;
-  const gameAnswer = progression[indexRandom];
+  const correctAnswer = progression[indexRandom];
+
   progression[indexRandom] = '..';
   const expression = `${progression.join(' ')}`;
   askQuestion(expression);
-  const answer = Number(getAnswer());
+  const userAnswer = Number(getAnswer());
 
-  return test(answer, gameAnswer);
+  return test(userAnswer, correctAnswer);
 };
 
 export default () => {
-  greeting();
-
-  greetingBrainProgression();
-
-  startGame(startRound);
+  startGame(gameRules, startRound);
 };

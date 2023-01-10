@@ -1,5 +1,4 @@
 import {
-  greeting,
   getRandomNumber,
   askQuestion,
   test,
@@ -20,23 +19,19 @@ const isPrime = (number) => {
   return true;
 };
 
-const greetingBrainPrime = () => {
+const gameRules = () => {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 };
 
 const startRound = () => {
   const number = getRandomNumber();
   askQuestion(number);
-  const answer = getAnswer();
-  const gameAnswer = isPrime(number) ? 'yes' : 'no';
+  const userAnswer = getAnswer();
+  const correctAnswer = isPrime(number) ? 'yes' : 'no';
 
-  return test(answer, gameAnswer);
+  return test(userAnswer, correctAnswer);
 };
 
 export default () => {
-  greeting();
-
-  greetingBrainPrime();
-
-  startGame(startRound);
+  startGame(gameRules, startRound);
 };
