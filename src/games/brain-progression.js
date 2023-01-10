@@ -29,7 +29,7 @@ const startRound = () => {
   const number1 = getRandomNumber();
   const step = getStep();
   const progression = getProgression(number1, step);
-  
+
   const indexRandom = getRandomNumber() % progression.length;
   const correctAnswer = progression[indexRandom];
 
