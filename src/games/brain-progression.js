@@ -1,8 +1,5 @@
 import {
   getRandomNumber,
-  askQuestion,
-  test,
-  getAnswer,
   startGame,
 } from '../index.js';
 
@@ -21,26 +18,18 @@ const getProgression = (number1, step, rowLength = 10) => {
   return row;
 };
 
-const gameRules = () => {
-  console.log('What number is missing in the progression?');
-};
-
 const startRound = () => {
   const number1 = getRandomNumber();
   const step = getStep();
   const progression = getProgression(number1, step);
-
   const indexRandom = getRandomNumber() % progression.length;
-  const correctAnswer = progression[indexRandom];
-
+  const correctAnswer = progression[indexRandom].toString();
   progression[indexRandom] = '..';
   const expression = `${progression.join(' ')}`;
-  askQuestion(expression);
-  const userAnswer = Number(getAnswer());
 
-  return test(userAnswer, correctAnswer);
+  return [expression, correctAnswer];
 };
 
 export default () => {
-  startGame(gameRules, startRound);
+  startGame('What number is missing in the progression?', startRound);
 };
