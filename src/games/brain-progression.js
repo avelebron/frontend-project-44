@@ -1,7 +1,5 @@
-import {
-  getRandomNumber,
-  startGame,
-} from '../index.js';
+import startGame from '../index.js';
+import getRandomNumber from '../helpers.js';
 
 const getStep = () => {
   const steps = [1, 2, 3, 4, 5];
@@ -18,7 +16,7 @@ const getProgression = (number1, step, rowLength = 10) => {
   return row;
 };
 
-const startRound = () => {
+const prepareDataForRound = () => {
   const number1 = getRandomNumber();
   const step = getStep();
   const progression = getProgression(number1, step);
@@ -31,5 +29,5 @@ const startRound = () => {
 };
 
 export default () => {
-  startGame('What number is missing in the progression?', startRound);
+  startGame('What number is missing in the progression?', prepareDataForRound);
 };

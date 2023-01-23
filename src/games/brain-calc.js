@@ -1,7 +1,5 @@
-import {
-  getRandomNumber,
-  startGame,
-} from '../index.js';
+import startGame from '../index.js';
+import getRandomNumber from '../helpers.js';
 
 const getOperator = () => {
   const operators = ['+', '-', '*'];
@@ -27,7 +25,7 @@ const getGameAnswer = (number1, operator, number2) => {
   return correctAnswer;
 };
 
-const startRound = () => {
+const prepareDataForRound = () => {
   const number1 = getRandomNumber();
   const number2 = getRandomNumber();
   const operator = getOperator();
@@ -38,5 +36,5 @@ const startRound = () => {
 };
 
 export default () => {
-  startGame('What is the result of the expression?', startRound);
+  startGame('What is the result of the expression?', prepareDataForRound);
 };
