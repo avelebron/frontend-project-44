@@ -3,7 +3,7 @@ import getRandomNumber from '../helpers.js';
 
 const isPrime = (number) => {
   const num = number;
-  if (num === 1) {
+  if (num === 0 && num === 1) {
     return false;
   }
   if (num === 2) {
